@@ -225,11 +225,11 @@ while not flag:
     Gt = kohren()
 
     if Gp < Gt:
-        print('Дисперсії однорідні')
+        print('Gp = {} < Gt = {}. Дисперсії однорідні'.format(round(Gp, 3), round(Gt, 3)))
 
         flag = False
     else:
-        print('Дисперсії неоднорідні')
+        print('Gp = {} > Gt = {}. Дисперсії неоднорідні'.format(round(Gp, 3), round(Gt, 3)))
         m += 1
     S_average = sum(S_kv) / N
 
@@ -238,7 +238,7 @@ while not flag:
     S_beta_s = S2_beta_s ** .5
 
     beta = [(sum([x_for_beta[j][i] * Y_average[j] for j in range(N)]) / N) for i in range(4)]
-    ts = [(math.fabs(beta[i]) / S_beta_s) for i in range(4)]
+    ts = [(math.fabs(beta[i]) / S_beta_s) for i in range(4)]     #tt
     tabl_Stud = [
         12.71,
         4.303,
